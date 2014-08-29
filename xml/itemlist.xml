@@ -1,0 +1,38 @@
+﻿<CATALOG>
+    <ITEM>
+        <TYPE>kitchen</TYPE>
+        <NAME>Rice Cooker电饭锅</NAME>
+        <PARA>8cups, support steam and rice cooking</PARA>
+        <PHOTO>cooker.jpg</PHOTO>
+        <NOTE>Well function</NOTE>
+        <PRICE> $5 </PRICE>
+        <BARGAIN> Hi</BARGAIN>
+    </ITEM>
+    <ITEM>
+        <TYPE>kitchen</TYPE>
+        <NAME>Cooking Kit锅铲勺</NAME>
+        <PARA>Include cooking pan, turner, colander and soup spoon </PARA>
+        <PHOTO>cookingkit.jpg</PHOTO>
+        <NOTE> Colander and spoon: $2 each; Pan: $6</NOTE>
+        <PRICE> $8 if buy all </PRICE>
+        <BARGAIN> Hi</BARGAIN>
+    </ITEM>
+    <ITEM>
+        <TYPE>grocery</TYPE>
+        <NAME>Flavoring调料</NAME>
+        <PARA> Take whatever you want</PARA>
+        <PHOTO>grocery.jpg</PHOTO>
+        <NOTE>Free, take whatever you need, available after Dec.15</NOTE>
+        <PRICE>FREE</PRICE>
+        <BARGAIN> Hi</BARGAIN>
+    </ITEM>
+    <ITEM>
+        <TYPE>Tools</TYPE>
+        <NAME>Bucket水桶</NAME>
+        <PARA> Big enough...</PARA>
+        <PHOTO>bucket.jpg</PHOTO>
+        <NOTE> With cap</NOTE>
+        <PRICE> $1 </PRICE>
+        <BARGAIN> Hi</BARGAIN>
+    </ITEM>
+</CATALOG>

@@ -1,0 +1,74 @@
+﻿<CATALOG>
+    <ITEM>
+        <TYPE>electronic</TYPE>
+        <NAME>HP Printer Scanner打印扫描一体机</NAME>
+        <PARA>HP deskjet F4180,inkjet</PARA>
+        <PHOTO>printer.jpg</PHOTO>
+        <NOTE>With halfused ink and super long USB cable</NOTE>
+        <PRICE> $10 </PRICE>
+        <BARGAIN> Hi</BARGAIN>
+    </ITEM>
+    <ITEM>
+        <TYPE>electronic</TYPE>
+        <NAME>Electronic Kettle电热水壶</NAME>
+        <PARA>max 1.7L</PARA>
+        <PHOTO>kettle.jpg</PHOTO>
+        <NOTE>Well functioned, available after Dec.18</NOTE>
+        <PRICE> $5 </PRICE>
+        <BARGAIN> Hi</BARGAIN>
+    </ITEM>
+    <ITEM>
+        <TYPE>kitchen</TYPE>
+        <NAME>Rice Cooker电饭锅</NAME>
+        <PARA>8cups, support steam and rice cooking</PARA>
+        <PHOTO>cooker.jpg</PHOTO>
+        <NOTE>Well function, available after Dec.15</NOTE>
+        <PRICE> $5 </PRICE>
+        <BARGAIN> Hi</BARGAIN>
+    </ITEM>
+    <ITEM>
+        <TYPE>kitchen</TYPE>
+        <NAME>Cooking Kit锅铲勺</NAME>
+        <PARA>Include cooking pan, turner, colander and soup spoon </PARA>
+        <PHOTO>cookingkit.jpg</PHOTO>
+        <NOTE> Turner, colander and spoon: $2 each; Pan: $6, available after Dec.15</NOTE>
+        <PRICE> $10 if buy all </PRICE>
+        <BARGAIN> Hi</BARGAIN>
+    </ITEM>
+    <ITEM>
+        <TYPE>kitchen</TYPE>
+        <NAME>Dining Kit餐具</NAME>
+        <PARA>Include 3 bowls, 1 plate, and container </PARA>
+        <PHOTO>diningkit.jpg</PHOTO>
+        <NOTE> $2 each, available after Dec.15</NOTE>
+        <PRICE> $8 if buy all</PRICE>
+        <BARGAIN> Hi</BARGAIN>
+    </ITEM>
+    <ITEM>
+        <TYPE>grocery</TYPE>
+        <NAME>Flavoring调料</NAME>
+        <PARA> Take whatever you want</PARA>
+        <PHOTO>grocery.jpg</PHOTO>
+        <NOTE>Free, take whatever you need, available after Dec.15</NOTE>
+        <PRICE>FREE</PRICE>
+        <BARGAIN> Hi</BARGAIN>
+    </ITEM>
+    <ITEM>
+        <TYPE>Tools</TYPE>
+        <NAME>Bucket水桶</NAME>
+        <PARA> Big enough...</PARA>
+        <PHOTO>bucket.jpg</PHOTO>
+        <NOTE> With cap</NOTE>
+        <PRICE> $1 </PRICE>
+        <BARGAIN> Hi</BARGAIN>
+    </ITEM>
+    <ITEM>
+        <TYPE>Tools</TYPE>
+        <NAME>Mop拖把</NAME>
+        <PARA> Well functioned </PARA>
+        <PHOTO>mop.jpg</PHOTO>
+        <NOTE> Seldom used</NOTE>
+        <PRICE> $1 </PRICE>
+        <BARGAIN> Hi</BARGAIN>
+    </ITEM>
+</CATALOG>
