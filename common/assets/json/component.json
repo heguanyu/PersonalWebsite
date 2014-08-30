@@ -1,0 +1,8 @@
+{
+    "files": [
+        "/common/assets/js/Component.js"
+    ],
+    "dependencies": [
+        "/common/assets/json/observable.json"
+    ]
+}

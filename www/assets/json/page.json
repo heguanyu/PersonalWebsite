@@ -1,0 +1,8 @@
+{
+    "files": [
+        "/www/assets/js/Page.js"
+    ],
+    "dependencies": [
+        "/common/assets/json/component.json"
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "files": [
+        "/common/assets/css/common.css"
+    ],
+    "dependencies": [
+        "/common/assets/json/core.json",
+        "/common/assets/json/base.json",
+        "/common/assets/json/dom.json",
+        "/common/assets/json/events.json",
+        "/common/assets/json/component.json",
+        "/common/assets/json/observable.json",
+        "/common/assets/json/jquery.json"
+    ]
+}

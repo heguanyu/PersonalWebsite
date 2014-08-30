@@ -2,11 +2,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Guanyu He | Student @ UPenn</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<?php
+    require_once COMMONPATH.'common.php';
+    require_once DOCROOT.'/../package/include.php';
+    Inclusion::includeCss('/common/assets/json/common.json');
+    Inclusion::includeCss('/www/assets/json/page.json');
+    Inclusion::includeJs('/common/assets/json/common.json');
+    Inclusion::includeJs('/www/assets/json/page.json');
 
+?>
+</head>
+<body>
+    <script type="text/javascript">
+        CORE.Events.ready(
+            function() {
+                console.debug('hi');
+                var contents = CORE.Dom.create({});
+                contents.appendChild(CORE.Dom.create({cls: 'hello',cn: 'hello'}));
+                var page = new CORE.Page(
+                    {
+                        container: document.body,
+                        contents: contents,
+                        currentPage: 'profile'
+                    }
+                );
+            }
+        );
+    </script>
+</body>
+</html>
+<?php
+   return;
+?>
 </head>
 <body>
 <div class="main">

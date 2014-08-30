@@ -1,0 +1,9 @@
+{
+    "files": [
+
+    ],
+    "dependencies": [
+        "/www/assets/json/page.json",
+        "/www/assets/json/style.json"
+    ]
+}
