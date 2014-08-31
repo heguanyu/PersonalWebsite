@@ -1,0 +1,24 @@
+.menu {
+    margin:0 auto;
+    padding:0;
+    height:47px;
+    opacity: 1.0;
+}
+
+.menu .navigationButton {
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.menu .navigationButton:hover{
+    color: #657E86;
+    background-color: white;
+}
+
+.menu .titleText {
+    font-size: 20px;
+    margin: 3px 0 0 20px;
+}

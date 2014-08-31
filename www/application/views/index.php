@@ -6,9 +6,9 @@
     require_once COMMONPATH.'common.php';
     require_once DOCROOT.'/../package/include.php';
     Inclusion::includeCss('/common/assets/json/common.json');
-    Inclusion::includeCss('/www/assets/json/page.json');
+    Inclusion::includeCss('/www/assets/json/introduction.json');
     Inclusion::includeJs('/common/assets/json/common.json');
-    Inclusion::includeJs('/www/assets/json/page.json');
+    Inclusion::includeJs('/www/assets/json/introduction.json');
 
 ?>
 </head>
@@ -18,7 +18,11 @@
             function() {
                 console.debug('hi');
                 var contents = CORE.Dom.create({});
-                contents.appendChild(CORE.Dom.create({cls: 'hello',cn: 'hello'}));
+                var introduction = new CORE.Introduction(
+                    {
+                        container: contents
+                    }
+                );
                 var page = new CORE.Page(
                     {
                         container: document.body,
@@ -37,26 +41,7 @@
 </head>
 <body>
 <div class="main">
-  <div class="header">
-    <div class="header_resize">
-      <div class="menu_nav">
-        <ul>
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="Rendering and Modeling.php">Rendering and Modeling</a></li>
-          <li><a href="game.php">Game Design & Development</a></li>
-		  <li><a href="animation.php">Animation & Effects</a></li>
-          <li><a href="tools.php">Tools</a></li>
-          <li><a href="contact.php">Contact Me</a></li>
-          <li title="WebGL Ocean"><a href="../oceanshader/water.html">WebGL Ocean(featured)</a></li>		  
-        </ul>
-      </div>
-      <div class="clr"></div>
-      <div class="logo">
-        <h1><a href="index.php"><span>Guanyu He</span></a> <small>University of Pennsylvania</small></h1>
-      </div>
-      <div class="clr"></div>
-    </div>
-  </div>
+
   <div class="content">
     <div class="content_resize">
      <div class="fbg">

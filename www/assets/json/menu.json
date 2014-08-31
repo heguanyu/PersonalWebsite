@@ -1,0 +1,9 @@
+{
+    "files": [
+        "/www/assets/js/Menu.js",
+        "/www/assets/css/menu.css"
+    ],
+    "dependencies": [
+        "/common/assets/json/component.json"
+    ]
+}

@@ -1,3 +1,28 @@
 .greenText {
     text-color: green;
 }
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.clear:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.whiteText {
+    color: #ffffff;
+}

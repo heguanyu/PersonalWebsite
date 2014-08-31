@@ -4,14 +4,12 @@ body {
 	padding:0;
 	width:100%;
 	color:#959595;
-	font:normal 12px/1.8em Arial, Helvetica, sans-serif;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 13px;
 }
 html, .main {
 	padding:0;
 	margin:0;
-}
-.main {
-	border-top:6px solid #0b01b8;
 }
 .clr {
 	clear:both;
@@ -65,59 +63,12 @@ a {
 	text-decoration:underline;
 }
 
-.header, .content, .menu_nav, .fbg, .footer, form, ol, ol li, ul, .content .mainbar, .content .sidebar {
-	margin:0;
-	padding:0;
-}
-.header_resize {
-	margin:0 auto;
-	padding:0;
-	width:984px;
-	border-bottom: 1px solid #CCC;
-}
-.menu_nav {
-	margin:0 auto;
-	padding:0;
-	float:right;
-	height:47px;
-}
-.menu_nav ul {
-	list-style:none;
-	height:47px;
-	float:left;
-}
-.menu_nav ul li {
-	margin:0;
-	padding:0 2px 0 0;
-	float:left;
-}
-.menu_nav ul li a {
-	display:block;
-	margin:0;
-	padding:13px 14px;
-	color:#888;
-	text-decoration:none;
-	font-size:13px;
-}
-.menu_nav ul li.active a {
-	color:#fff;
-    background-image:url(images/css/gradient2.png);
-
-}
-.menu_nav ul li a:hover
-{
-	color:#fff;
-    background-image:url(images/css/gradient.png);
-
-
-}
 .content {
+    margin:0 auto;
+    padding:0 0 24px;
+    width:1120px;
 }
-.content_resize {
-	margin:0 auto;
-	padding:0 0 24px;
-	width:970px;
-}
+
 .content .mainbar {
 	margin:0;
 	padding:0;
