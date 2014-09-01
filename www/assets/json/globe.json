@@ -1,0 +1,13 @@
+{
+    "files": [
+        "/www/assets/js/Globe.js",
+        "/www/assets/fs/globe.fs",
+        "/www/assets/vs/globe.vs",
+        "/www/assets/css/globe.css"
+    ],
+    "dependencies": [
+        "/common/assets/json/component.json",
+        "/common/assets/json/gl.json",
+        "/common/assets/json/glbase.json"
+    ]
+}

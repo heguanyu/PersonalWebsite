@@ -8,13 +8,19 @@ CORE.Header = CORE.Component.extend(
             this.param = param;
             var spec = {
                 cls: 'header',
-                cn: {
-                    cls: 'menuRow',
-                    cn: {
-                        cls: 'menuContainer',
-                        id: '_menuContainer'
+                cn: [
+                    {
+                        cls: 'menuRow',
+                        cn: {
+                            cls: 'menuContainer',
+                            id: '_menuContainer'
+                        }
+                    },
+                    {
+                        cls: 'breakoutText',
+                        cn: 'Breakout Webpage Tradition with WebGL'
                     }
-                }
+                ]
 
             };
 

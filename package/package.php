@@ -18,6 +18,17 @@ class Package {
 		return $this->getList('js', $files);
 	}
 
+	public function getFsList() {
+		$files = array();
+		return $this->getList('fs', $files);
+	}
+
+	public function getVsList() {
+		$files = array();
+		return $this->getList('vs', $files);
+	}
+
+
 	public function getCssHtml() {
         $list = $this->getCssList();
         $html = '';
@@ -37,6 +48,34 @@ class Package {
         }
 		return $html;
 	}
+
+	public function getFsHtml() {
+        $list = $this->getFsList();
+        $html = '';
+        foreach ($list as $file) {
+            $path = "../". $file;
+            $id = $file;
+            $html .= "<script id=\"fs\" type=\"x-shader/x-vertex\" src=\"$path\">";
+            $html .= file_get_contents($path);
+            $html .= "</script>\n";
+        }
+		return $html;
+	}
+
+	public function getVsHtml() {
+        $list = $this->getVsList();
+        $html = '';
+        foreach ($list as $file) {
+            //$path = $this->makePath("//$this->assetsDomain", $file);
+            $path = "../". $file;
+            $id = $file;
+            $html .= "<script id=\"vs\" type=\"x-shader/x-fragment\" src=\"$path\">";
+            $html .= file_get_contents($path);
+            $html .= "</script>\n";
+        }
+		return $html;
+	}
+
 
 	private function getList($extension, &$files) {
 		$suffix = '.' . strtolower($extension);

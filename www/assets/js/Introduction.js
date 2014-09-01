@@ -19,6 +19,10 @@ CORE.Introduction = CORE.Component.extend(
                                 id: '_contentContainer',
                                 cn: [
                                     {
+                                        cls: 'globeContainer',
+                                        id: '_globeContainer'
+                                    },
+                                    {
                                         cls: 'logo',
                                         cn: {
                                             tag: 'h1',
@@ -51,9 +55,15 @@ CORE.Introduction = CORE.Component.extend(
             var dom = CORE.Dom.create(spec);
 
             var headerContainer = dom.querySelector('#_headerContainer');
+            var globeContainer = dom.querySelector('#_globeContainer');
             var header = new CORE.Header(
                 {
                     container: headerContainer
+                }
+            );
+            var globe = new CORE.Globe(
+                {
+                    container: globeContainer
                 }
             );
             this.param.container.appendChild(dom);

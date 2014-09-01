@@ -1,9 +1,11 @@
 .header {
     width: 100%;
+    min-width: 1120px;
     height: 200px;
     background-size: 100% 100%;
-    background-image: url(/www/assets/images/large/header_bg.jpg);
+    background-image: url(/www/assets/images/large/header_bg.png);
     background-repeat: no-repeat;
+    position: relative;
 }
 
 .header .menuRow {
@@ -12,4 +14,14 @@
     padding: 10px 0 0 0;
     background: rgba(34,34,34,0.5);
     box-shadow: 0 5px 10px #111111;
+}
+
+
+.header .breakoutText {
+    position: absolute;
+    left: 20px;
+    top: 100px;
+    color: rgb(61,86,125);
+    font-size: 40px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }

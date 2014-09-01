@@ -6,6 +6,7 @@
     "dependencies": [
         "/www/assets/json/page.json",
         "/www/assets/json/style.json",
-        "/www/assets/json/header.json"
+        "/www/assets/json/header.json",
+        "/www/assets/json/globe.json"
     ]
 }

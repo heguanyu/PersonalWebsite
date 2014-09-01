@@ -13,12 +13,17 @@
     border-radius: 5px;
 }
 
+.menu .navigationButtonContainer {
+    margin-right: 50px;
+}
 .menu .navigationButton:hover{
     color: #657E86;
     background-color: white;
 }
 
 .menu .titleText {
+    cursor: default;
+    font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 20px;
     margin: 3px 0 0 20px;
 }

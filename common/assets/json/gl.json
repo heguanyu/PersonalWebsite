@@ -1,0 +1,9 @@
+{
+    "files": [
+        "/common/assets/js/GL/gl-matrix.js",
+        "/common/assets/js/GL/webGLUtility.js"
+    ],
+    "dependencies": [
+
+    ]
+}

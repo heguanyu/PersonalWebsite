@@ -4,8 +4,7 @@
         "/www/assets/css/header.css"
     ],
     "dependencies": [
-        "/www/assets/json/page.json",
-        "/www/assets/json/style.json",
+        "/common/assets/json/component.json",
         "/www/assets/json/menu.json"
     ]
 }

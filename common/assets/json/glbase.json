@@ -1,0 +1,8 @@
+{
+    "files": [
+        "/common/assets/js/GL/GLBase.js"
+    ],
+    "dependencies": [
+        "/common/assets/json/base.json"
+    ]
+}

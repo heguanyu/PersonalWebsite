@@ -13,7 +13,7 @@ CORE.Menu = CORE.Component.extend(
                     id: 'webgl_ocean'
                 },
                 {
-                    text: 'Contact Me',
+                    text: 'Who Am I',
                     id: 'contact'
                 },
                 {
@@ -37,8 +37,8 @@ CORE.Menu = CORE.Component.extend(
                 cls: 'menu clear',
                 cn: [
                     {
-                        cls: 'titleText whiteText floatLeft',
-                        cn: 'Guanyuhe.com'
+                        cls: 'titleText unselectable whiteText floatLeft',
+                        cn: 'GuanyuHe.com'
                     },
                     {
                         cls: 'navigationButtonContainer floatRight clear',
@@ -54,7 +54,7 @@ CORE.Menu = CORE.Component.extend(
 
             for (var i = 0 ; i < items.length; i++) {
                 var navigationButtonSpec = {
-                    cls: 'navigationButton floatRight pointer whiteText',
+                    cls: 'navigationButton unselectable floatRight pointer whiteText',
                     cn: items[i].text
                 };
 

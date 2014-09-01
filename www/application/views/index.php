@@ -1,10 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Guanyu He | Student @ UPenn</title>
+<title>Guanyu He, Frontend Engineer</title>
 <?php
     require_once COMMONPATH.'common.php';
     require_once DOCROOT.'/../package/include.php';
+    Inclusion::includeFs('/www/assets/json/introduction.json');
+    Inclusion::includeVs('/www/assets/json/introduction.json');
     Inclusion::includeCss('/common/assets/json/common.json');
     Inclusion::includeCss('/www/assets/json/introduction.json');
     Inclusion::includeJs('/common/assets/json/common.json');
@@ -16,7 +18,6 @@
     <script type="text/javascript">
         CORE.Events.ready(
             function() {
-                console.debug('hi');
                 var contents = CORE.Dom.create({});
                 var introduction = new CORE.Introduction(
                     {
