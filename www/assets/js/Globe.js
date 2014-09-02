@@ -14,8 +14,8 @@ CORE.Globe = CORE.Component.extend(
                         tag: 'canvas',
                         cls: 'canvas',
                         id: '_canvas',
-                        width: '400',
-                        height: '400'
+                        width: '200',
+                        height: '200'
                     },
                     {
                         id: '_message'
@@ -55,7 +55,7 @@ CORE.Globe = CORE.Component.extend(
                 ///////////////////////////////////////////////////////////////////////////
 
                 gl.viewport(0, 0, canvas.width, canvas.height);
-                gl.clearColor(0.0, 0.0, 0.0, 1.0);
+                gl.clearColor(1.0, 1.0, 1.0, 0.0);
                 gl.enable(gl.DEPTH_TEST);
 
                 var persp = mat4.create();
@@ -318,6 +318,7 @@ CORE.Globe = CORE.Component.extend(
                     curtime+=0.5;
                     ///////////////////////////////////////////////////////////////////////////
                     // Render
+                    gl.clearColor(1.0,1.0,1.0,0.0);
                     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
                     gl.uniformMatrix4fv(u_ModelLocation, false, model);

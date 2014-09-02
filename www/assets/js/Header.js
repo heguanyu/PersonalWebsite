@@ -18,7 +18,7 @@ CORE.Header = CORE.Component.extend(
                     },
                     {
                         cls: 'breakoutText',
-                        cn: 'Breakout Webpage Tradition with WebGL'
+                        cn: 'Breakout Report Style with WebGL'
                     }
                 ]
 
@@ -33,7 +33,6 @@ CORE.Header = CORE.Component.extend(
                     container: menuContainer
                 }
             );
-
             this.param.container.appendChild(dom);
         }
     }

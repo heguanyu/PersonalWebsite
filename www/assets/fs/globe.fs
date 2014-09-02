@@ -33,101 +33,102 @@ varying vec3 waterTurb;
 
 mat3 eastNorthUpToEyeCoordinates(vec3 positionMC, vec3 normalEC);
 
-    vec3 permute(vec3 x) {
-      x = ((x*34.0)+1.0)*x;
-      return x - floor(x * (1.0 / 289.0)) * 289.0;
-    }
+vec3 permute(vec3 x) {
+  x = ((x*34.0)+1.0)*x;
+  return x - floor(x * (1.0 / 289.0)) * 289.0;
+}
 
-    float snoise(vec2 v)
-      {
-      const vec4 C = vec4(0.211324865405187, 0.366025403784439,  -0.577350269189626, 0.024390243902439);
+float snoise(vec2 v)
+  {
+  const vec4 C = vec4(0.211324865405187, 0.366025403784439,  -0.577350269189626, 0.024390243902439);
 
-      vec2 i  = floor(v + dot(v, C.yy) );
-      vec2 x0 = v -   i + dot(i, C.xx);
+  vec2 i  = floor(v + dot(v, C.yy) );
+  vec2 x0 = v -   i + dot(i, C.xx);
 
-      vec2 i1;
-      i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+  vec2 i1;
+  i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
 
-      vec4 x12 = x0.xyxy + C.xxzz;
-      x12.xy -= i1;
+  vec4 x12 = x0.xyxy + C.xxzz;
+  x12.xy -= i1;
 
-      i = i - floor(i * (1.0 / 289.0)) * 289.0;
+  i = i - floor(i * (1.0 / 289.0)) * 289.0;
 
-      vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
-            + i.x + vec3(0.0, i1.x, 1.0 ));
+  vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+        + i.x + vec3(0.0, i1.x, 1.0 ));
 
-      vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
-      m = m*m ;
-      m = m*m ;
+  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+  m = m*m ;
+  m = m*m ;
 
-      vec3 x = 2.0 * fract(p * C.www) - 1.0;
-      vec3 h = abs(x) - 0.5;
-      vec3 ox = floor(x + 0.5);
-      vec3 a0 = x - ox;
+  vec3 x = 2.0 * fract(p * C.www) - 1.0;
+  vec3 h = abs(x) - 0.5;
+  vec3 ox = floor(x + 0.5);
+  vec3 a0 = x - ox;
 
-      m *= inversesqrt( a0*a0 + h*h );
+  m *= inversesqrt( a0*a0 + h*h );
 
-      vec3 g;
-      g.x  = a0.x  * x0.x  + h.x  * x0.y;
-      g.yz = a0.yz * x12.xz + h.yz * x12.yw;
-      return 130.0 * dot(m, g);
-    }
+  vec3 g;
+  g.x  = a0.x  * x0.x  + h.x  * x0.y;
+  g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+  return 130.0 * dot(m, g);
+}
 
-    vec3 getRainbow(float x)
+vec3 getRainbow(float x)
+{
+
+    vec3 flags[7];
+    flags[0]=vec3(0.0,0.0,1.0);
+    flags[1]=vec3(0.0,0.99,1.0);
+    flags[2]=vec3(0.0,0.99,1.0);
+    flags[3]=vec3(1.0,1.0,0.0);
+    flags[4]=vec3(1.0,0.51,0.0);
+    flags[5]=vec3(1.0,0.0,0.0);
+    flags[6]=vec3(1.0,1.0,1.0);
+
+    x=clamp(x,0.0,0.98);
+    int idx=int(floor(x/0.188));
+    //int idx=0;
+    float ofst, ofst2;
+    if(idx==0)
     {
-
-        vec3 flags[7];
-        flags[0]=vec3(0.0,0.0,1.0);
-        flags[1]=vec3(0.0,0.99,1.0);
-        flags[2]=vec3(0.0,0.99,1.0);
-        flags[3]=vec3(1.0,1.0,0.0);
-        flags[4]=vec3(1.0,0.51,0.0);
-        flags[5]=vec3(1.0,0.0,0.0);
-        flags[6]=vec3(1.0,1.0,1.0);
-
-        x=clamp(x,0.0,0.98);
-        int idx=int(floor(x/0.188));
-        //int idx=0;
-        float ofst, ofst2;
-        if(idx==0)
-        {
-            ofst=x-0.0*0.188;
-            ofst2=1.0*0.188-x;
-            return flags[0]*(ofst2/(ofst+ofst2))+flags[1]*(ofst/(ofst+ofst2));
-        }
-        else if(idx==1)
-        {
-            ofst=x-1.0*0.188;
-            ofst2=2.0*0.188-x;
-            return flags[1]*(ofst2/(ofst+ofst2))+flags[2]*(ofst/(ofst+ofst2));
-        }
-        else if(idx==2)
-        {
-            ofst=x-2.0*0.188;
-            ofst2=3.0*0.188-x;
-            return flags[2]*(ofst2/(ofst+ofst2))+flags[3]*(ofst/(ofst+ofst2));
-        }
-        else if(idx==3)
-        {
-            ofst=x-3.0*0.188;
-            ofst2=4.0*0.188-x;
-            return flags[3]*(ofst2/(ofst+ofst2))+flags[4]*(ofst/(ofst+ofst2));
-        }
-        else if(idx==4)
-        {
-            ofst=x-4.0*0.188;
-            ofst2=5.0*0.188-x;
-            return flags[4]*(ofst2/(ofst+ofst2))+flags[5]*(ofst/(ofst+ofst2));
-        }
-        else if(idx==5)
-        {
-            ofst=x-5.0*0.188;
-            ofst2=6.0*0.188-x;
-            return flags[5]*(ofst2/(ofst+ofst2))+flags[6]*(ofst/(ofst+ofst2));
-        }
-
-        return vec3(1.0);
+        ofst=x-0.0*0.188;
+        ofst2=1.0*0.188-x;
+        return flags[0]*(ofst2/(ofst+ofst2))+flags[1]*(ofst/(ofst+ofst2));
     }
+    else if(idx==1)
+    {
+        ofst=x-1.0*0.188;
+        ofst2=2.0*0.188-x;
+        return flags[1]*(ofst2/(ofst+ofst2))+flags[2]*(ofst/(ofst+ofst2));
+    }
+    else if(idx==2)
+    {
+        ofst=x-2.0*0.188;
+        ofst2=3.0*0.188-x;
+        return flags[2]*(ofst2/(ofst+ofst2))+flags[3]*(ofst/(ofst+ofst2));
+    }
+    else if(idx==3)
+    {
+        ofst=x-3.0*0.188;
+        ofst2=4.0*0.188-x;
+        return flags[3]*(ofst2/(ofst+ofst2))+flags[4]*(ofst/(ofst+ofst2));
+    }
+    else if(idx==4)
+    {
+        ofst=x-4.0*0.188;
+        ofst2=5.0*0.188-x;
+        return flags[4]*(ofst2/(ofst+ofst2))+flags[5]*(ofst/(ofst+ofst2));
+    }
+    else if(idx==5)
+    {
+        ofst=x-5.0*0.188;
+        ofst2=6.0*0.188-x;
+        return flags[5]*(ofst2/(ofst+ofst2))+flags[6]*(ofst/(ofst+ofst2));
+    }
+
+    return vec3(1.0);
+}
+
 void main(void)
 {
     // surface normal - normalized after rasterization
@@ -146,13 +147,11 @@ void main(void)
     vec3 normal=normalize(eastNorthUpToEyeCoordinates(v_positionMC, v_Normal)*turbnormal);
 
 
-
-
-        vec2 ocean_Texcoord = v_Texcoord;
-        float fragutime=u_time-10.0*float(int(u_time/10.0));
-        float ocean_texcoord_noise=snoise(ocean_Texcoord*(fragutime));
-        ocean_Texcoord.s-=0.00002*fragutime*ocean_texcoord_noise;
-        ocean_Texcoord.t+=0.00001*fragutime*ocean_texcoord_noise;
+    vec2 ocean_Texcoord = v_Texcoord;
+    float fragutime=u_time-10.0*float(int(u_time/10.0));
+    float ocean_texcoord_noise=snoise(ocean_Texcoord*(fragutime));
+    ocean_Texcoord.s-=0.00002*fragutime*ocean_texcoord_noise;
+    ocean_Texcoord.t+=0.00001*fragutime*ocean_texcoord_noise;
 
     vec2 ocean_upTexcoord=ocean_Texcoord;
     vec2 ocean_rightTexcoord=ocean_Texcoord;
@@ -177,7 +176,7 @@ void main(void)
 
     if(isOcean)
     {
-                    normal=ocean_normal;
+        normal=ocean_normal;
     }
     float dotlightnorm=dot(u_CameraSpaceDirLight, normal);
     //vec3 normal = normalize(v_Normal);
@@ -227,7 +226,6 @@ void main(void)
         cloudColor*=(1.0-cloudTrans.g)*0.2;
 
         color = mix(color, cloudColor,clamp(length(color),0.0,1.0));
-
 
     }
 

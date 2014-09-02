@@ -66,6 +66,7 @@ CORE.Introduction = CORE.Component.extend(
                     container: globeContainer
                 }
             );
+
             this.param.container.appendChild(dom);
         }
     }
